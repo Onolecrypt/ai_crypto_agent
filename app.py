@@ -240,9 +240,14 @@ def handle_dynamic_response(user_input):
     else:
         return static_chatbot.respond(user_input)
 
+#@app.route("/")
+#def index():
+    #return render_template("index.html")
+from flask import send_file
+
 @app.route("/")
 def index():
-    return render_template("index.html")
+    return send_file("index.html")
 
 @app.route("/get_response", methods=["POST"])
 def get_response():
